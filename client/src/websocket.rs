@@ -193,6 +193,11 @@ impl WebsocketClient {
 
         Ok(())
     }
+
+    /// Retrieve the current 'id' of a request made to websocket server
+    pub fn current_id(&self) -> u64 {
+        self.next_id - 1
+    }
 }
 
 #[async_trait]
